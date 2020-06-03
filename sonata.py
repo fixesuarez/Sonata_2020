@@ -18,6 +18,8 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels
 )
 
+pixels.fill((0, 255, 0))
+
 
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
@@ -71,6 +73,6 @@ while True:
     # Uncomment this line if you have RGBW/GRBW NeoPixels
     # pixels.fill((0, 0, 255, 0))
     time.sleep(1)
-    print("2s")
+    print("3s")
 
     # rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
