@@ -15,7 +15,7 @@ num_pixels = 30
 ORDER = neopixel.GRB
 
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.2
+    pixel_pin, num_pixels
 )
 
 
