@@ -2,6 +2,7 @@ import time
 import board
 import neopixel
 
+
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
 pixel_pin = board.D18
@@ -17,8 +18,10 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
 
+
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
+    # The colours are a transition r - g - b - back to r.
     if pos < 0 or pos > 255:
         r = g = b = 0
     elif pos < 85:
@@ -37,6 +40,7 @@ def wheel(pos):
         b = int(255 - pos * 3)
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
 
+
 def rainbow_cycle(wait):
     for j in range(255):
         for i in range(num_pixels):
@@ -45,5 +49,27 @@ def rainbow_cycle(wait):
         pixels.show()
         time.sleep(wait)
 
+
 while True:
+    # Comment this line out if you have RGBW/GRBW NeoPixels
+    pixels.fill((255, 0, 0))
+    # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # pixels.fill((255, 0, 0, 0))
+    pixels.show()
+    time.sleep(1)
+
+    # Comment this line out if you have RGBW/GRBW NeoPixels
+    pixels.fill((0, 255, 0))
+    # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # pixels.fill((0, 255, 0, 0))
+    pixels.show()
+    time.sleep(1)
+
+    # Comment this line out if you have RGBW/GRBW NeoPixels
+    pixels.fill((0, 0, 255))
+    # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # pixels.fill((0, 0, 255, 0))
+    pixels.show()
+    time.sleep(1)
+
     rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
