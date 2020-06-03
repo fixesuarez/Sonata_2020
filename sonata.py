@@ -53,27 +53,27 @@ def rainbow_cycle(wait):
 
 
 while True:
-    # print("Je rentre dans la boucle")
-    # Comment this line out if you have RGBW/GRBW NeoPixels
-    pixels.fill((255, 0, 0))
-    # Uncomment this line if you have RGBW/GRBW NeoPixels
-    # pixels.fill((255, 0, 0, 0))
-    time.sleep(1)
-    print("1s")
+    # # print("Je rentre dans la boucle")
+    # # Comment this line out if you have RGBW/GRBW NeoPixels
+    # pixels.fill((255, 0, 0))
+    # # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # # pixels.fill((255, 0, 0, 0))
+    # time.sleep(1)
+    # print("1s")
 
-    # Comment this line out if you have RGBW/GRBW NeoPixels
-    pixels.fill((0, 255, 0))
-    # Uncomment this line if you have RGBW/GRBW NeoPixels
-    # pixels.fill((0, 255, 0, 0))
-    time.sleep(1)
-    print("2s")
+    # # Comment this line out if you have RGBW/GRBW NeoPixels
+    # pixels.fill((0, 255, 0))
+    # # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # # pixels.fill((0, 255, 0, 0))
+    # time.sleep(1)
+    # print("2s")
 
-    # Comment this line out if you have RGBW/GRBW NeoPixels
-    pixels.fill((0, 0, 255))
-    # Uncomment this line if you have RGBW/GRBW NeoPixels
-    # pixels.fill((0, 0, 255, 0))
-    time.sleep(1)
-    print("3s")
+    # # Comment this line out if you have RGBW/GRBW NeoPixels
+    # pixels.fill((0, 0, 255))
+    # # Uncomment this line if you have RGBW/GRBW NeoPixels
+    # # pixels.fill((0, 0, 255, 0))
+    # time.sleep(1)
+    # print("3s")
 
-    # rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
+    rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
     time.sleep(1)
