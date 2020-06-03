@@ -6,3 +6,5 @@ Python 3 is required
 - install requirements
 - run: sudo python3 -m pip install --force-reinstall adafruit-blinka
 
+## To run the program
+sudo python sonata.py
