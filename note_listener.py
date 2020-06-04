@@ -12,6 +12,7 @@ class NoteListener:
         self.brightness=1.0
 
     def fade(self):
+        print("Note listener fading")
         if self.last_update+90 < millis():
             if self.brightness > 0.02:
                 self.brightness -= 0.02
@@ -24,7 +25,7 @@ class NoteListener:
             pos = int((frequency-self.frequency_start) / self.wide * 255)
             self.neopixel[self.index] = wheel(pos)
             self.neopixel.show()
-            self.inc
+            self.increment()
 
     def increment(self):
         self.index += 1
