@@ -41,7 +41,7 @@ class NoteTrainer:
                 if self.note_listener != None:
                     self.note_listener.note(input_note)
 
-        except Exception as e:
+            except Exception as e:
                 print(traceback.format_exc())
 
 
