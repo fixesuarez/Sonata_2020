@@ -7,6 +7,7 @@ class FadeWorker(Thread):
         self.go = False
 
     def start(self):
+        print("Fade worker Started")
         self.go = True
         while self.go:
             self.note_listener.fade()
