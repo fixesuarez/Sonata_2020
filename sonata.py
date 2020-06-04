@@ -54,8 +54,11 @@ def rainbow_cycle(wait):
 
 for i in range(3):
     rainbow_cycle(0.002)  # rainbow cycle with 1ms delay per step
-time.sleep(5)
-
+time.sleep(1)
+while pixels.brightness > 0.0:
+        pixels.brightness -= 0.01
+        pixels.show()
+        time.sleep(0.03)
 try:
     note_listener = NoteListener(neopixel, 80, 710)
 
