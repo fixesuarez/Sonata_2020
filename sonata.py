@@ -1,24 +1,26 @@
 import time
 import board
 import neopixel
- 
- 
+
+from note_listener import NoteListener
+
+
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
 # NeoPixels must be connected to D10, D12, D18 or D21 to work.
 pixel_pin = board.D18
- 
+
 # The number of NeoPixels
 num_pixels = 30
- 
+
 # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
 # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
 ORDER = neopixel.GRB
- 
+
 pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
- 
- 
+
+
 def wheel(pos):
     # Input a value 0 to 255 to get a color value.
     # The colours are a transition r - g - b - back to r.
@@ -39,8 +41,8 @@ def wheel(pos):
         g = int(pos * 3)
         b = int(255 - pos * 3)
     return (r, g, b) if ORDER in (neopixel.RGB, neopixel.GRB) else (r, g, b, 0)
- 
- 
+
+
 def rainbow_cycle(wait):
     for j in range(255):
         for i in range(num_pixels):
@@ -48,7 +50,15 @@ def rainbow_cycle(wait):
             pixels[i] = wheel(pixel_index & 255)
         pixels.show()
         time.sleep(wait)
- 
- 
+
+
 for i in range(3):
     rainbow_cycle(0.002)  # rainbow cycle with 1ms delay per step
+time.sleep(5)
+
+try:
+    note_listener = NoteListener(neopixel, 80, 710)
+
+except KeyboardInterrupt:
+    neopixel.brightness = 0.
+
