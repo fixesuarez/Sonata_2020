@@ -3,7 +3,10 @@ import board
 import neopixel
 
 from utilities import launch_loading_animation
+from constants import FADE_WORKER_DELAY
 from note_listener import NoteListener
+from fade_worker import FadeWorker
+from note_trainer import NoteTrainer
 
 
 # Choose an open pin connected to the Data In of the NeoPixel strip, i.e. board.D18
@@ -24,7 +27,11 @@ neopixels = neopixel.NeoPixel(
 launch_loading_animation(0.002, neopixels, num_pixels)
 
 try:
-    note_listener = NoteListener(neopixel, 80, 710)
+    note_listener = NoteListener(neopixels, 80, 710)
+    fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
+    fade_worker.start()
+
+    note_trainer = NoteTrainer
 
 except KeyboardInterrupt:
     neopixels.brightness = 0.

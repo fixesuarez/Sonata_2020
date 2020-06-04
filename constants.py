@@ -1,5 +1,7 @@
 import numpy
 
+LED_COUNT = 15
+
 ### SoundRecorder
 RATE = 44100
 BUFFER_SIZE = 1024 #1024 is a good buffer size 3072 works for Pi
@@ -76,3 +78,6 @@ NOTES_DICTIONNARY = {
     2093.0:'C7'
 }
 NOTES = numpy.array(sorted(NOTES_DICTIONNARY.keys()))
+
+FADE_WORKER_DELAY = 50
+SOUND_GATE = 17.5
