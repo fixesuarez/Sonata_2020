@@ -31,7 +31,8 @@ try:
     fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
     fade_worker.start()
 
-    note_trainer = NoteTrainer
+    note_trainer = NoteTrainer(note_listener)
+    note_trainer.main()
 
 except KeyboardInterrupt:
     neopixels.brightness = 0.
