@@ -8,7 +8,7 @@ class NoteListener:
         self.frequency_start = frequency_start
         self.frequency_end = frequency_end
         self.wide = frequency_start - frequency_end
-        self.last_update = millis
+        self.last_update = millis()
         self.brightness=1.0
 
     def fade(self):

@@ -36,4 +36,5 @@ try:
 except KeyboardInterrupt:
     neopixels.brightness = 0.
     neopixels.show()
+    fade_worker.stop()
 

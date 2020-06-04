@@ -10,3 +10,6 @@ class FadeWorker(Thread):
         self.go = True
         while self.go:
             self.note_listener.fade()
+
+    def stop(self):
+        self.go = False
