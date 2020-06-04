@@ -17,7 +17,7 @@ num_pixels = 30
 ORDER = neopixel.GRB
 
 pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, brightness=0.9, auto_write=True, pixel_order=ORDER
 )
 
 
@@ -58,7 +58,7 @@ time.sleep(1)
 while pixels.brightness > 0.0:
         pixels.brightness -= 0.01
         pixels.show()
-        time.sleep(0.03)
+        time.sleep(0.01)
 try:
     note_listener = NoteListener(neopixel, 80, 710)
 
