@@ -32,6 +32,7 @@ try:
     fade_worker.start()
 
     note_trainer = NoteTrainer(note_listener)
+    print("Note trainer built")
     note_trainer.main()
 
 except KeyboardInterrupt:
