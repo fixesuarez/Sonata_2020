@@ -36,17 +36,17 @@ class NoteTrainer:
                 sound_recorder.close()
 
                 if input_note > NOTES[-1] or input_note < NOTES[0]:
-                    print("Highest note: ", NOTES[-1])
-                    print("Min note: ", NOTES[0])
-                    print("Input note is out of range")
+                    # print("Highest note: ", NOTES[-1])
+                    # print("Min note: ", NOTES[0])
+                    # print("Input note is out of range")
                     continue
                 if signal_level > SOUND_GATE:
-                    print("Incorrec signal level")
+                    print("Incorrect signal level")
                     continue
 
                 target_note = closest_value_index(NOTES, round(input_note, 2))
 
-                print("signal_level:", signal_level, targetnote)
+                print("signal_level:", signal_level)
                 print("frequency: ", str(inputnote)+"Hz")
                 print("tuner note", NOTES_DICTIONNARY[NOTES[target_note]])
                 print("target note: ", target_note)
