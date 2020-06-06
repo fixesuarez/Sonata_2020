@@ -26,6 +26,7 @@ class NoteTrainer:
                 try:
                     frequence = freq_from_autocorr(raw_data_signal, RATE)
                     input_note = round(frequence, 2)
+                    print("Fréquence:", frequence)
                     print("Input note:", input_note)
                 except Exception as e:
                     print("Error getting input note")
