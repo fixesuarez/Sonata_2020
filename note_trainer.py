@@ -28,6 +28,8 @@ class NoteTrainer:
                     print("Frequence :" frequence)
                     input_note = round(frequence, 2)
                 except Exception as e:
+                    print("Error getting input note")
+                    print(e)
                     input_note = 0
 
                 sound_recorder.close()
