@@ -24,19 +24,19 @@ neopixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.9, auto_write=False, pixel_order=ORDER
 )
 
-launch_loading_animation(0.002, neopixels, num_pixels)
+if __name__ == '__main__':
+    launch_loading_animation(0.002, neopixels, num_pixels)
 
-try:
-    note_listener = NoteListener(neopixels, 80, 710)
-    fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
-    fade_worker.start()
+    try:
+        note_listener = NoteListener(neopixels, 80, 710)
+        fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
+        fade_worker.start()
 
-    note_trainer = NoteTrainer(note_listener)
-    print("Note trainer built")
-    note_trainer.main()
+        note_trainer = NoteTrainer(note_listener)
+        print("Note trainer built")
+        note_trainer.main()
 
-except KeyboardInterrupt:
-    neopixels.brightness = 0.
-    neopixels.show()
-    fade_worker.stop()
-
+    except KeyboardInterrupt:
+        neopixels.brightness = 0.
+        neopixels.show()
+        fade_worker.stop()
