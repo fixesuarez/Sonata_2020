@@ -20,10 +20,11 @@ class NoteListener:
     def note(self, frequency):
         if frequency < FREQUENCY_END and frequency > FREQUENCY_START:
             pos = int((frequency-FREQUENCY_START) / WIDE * 255)
-            self.neopixel[self.index] = wheel(pos)
-            print("pos: ", pos)
-            print("wheel position: ", wheel(pos))
+            color =  wheel(pos)
+            # self.neopixel[self.index] = color
+            print("Color: ", wheel(pos))
             print("Neopixels: ", self.neopixel)
+            self.neopixel.fill(color)
             self.neopixel.show()
 
             self.increment()
