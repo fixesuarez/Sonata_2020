@@ -71,7 +71,7 @@ def freq_from_autocorr(raw_data_signal, fs):
     return fs / px
 
 def find(condition):
-    res, = nonzero(ravel(condition))
+    res, = numpy.nonzero(numpy.ravel(condition))
     return res
 
 # See https://github.com/endolith/waveform-analyzer/blob/master/frequency_estimator.py
