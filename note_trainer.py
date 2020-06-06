@@ -1,5 +1,6 @@
 import traceback
 import numpy
+import math
 from scipy.signal import fftconvolve
 
 from constants import NOTES, NOTES_DICTIONNARY, RATE, SOUND_GATE
