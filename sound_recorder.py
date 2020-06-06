@@ -25,6 +25,7 @@ class SoundRecorder:
 
     
     def setup(self):
+        self.py_audio = pyaudio.PyAudio()
         self.in_stream = self.py_audio.open(input_device_index=self.device_index, format=pyaudio.paInt16, channels=1,
                                             rate=RATE, input=True, frames_per_buffer=BUFFER_SIZE)
 
