@@ -35,8 +35,10 @@ class NoteTrainer:
                 sound_recorder.close()
 
                 if input_note > NOTES[len(NOTES_DICTIONNARY)-1] or input_note < NOTES[0]:
+                    print("Input note is out of range")
                     continue
                 if signal_level > SOUND_GATE:
+                    print("Incorrec signal level")
                     continue
 
                 target_note = closest_value_index(NOTES, round(input_note, 2))
