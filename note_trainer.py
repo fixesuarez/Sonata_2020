@@ -21,11 +21,11 @@ class NoteTrainer:
                 sound_recorder.setup()
                 raw_data_signal = sound_recorder.get_audio()
                 signal_level = round(abs(loudness(raw_data_signal)), 2)
-                print("Signal level :" signal_level)
+                print("Signal level :", signal_level)
 
                 try:
                     frequence = freq_from_autocorr(raw_data_signal, RATE)
-                    print("Frequence :" frequence)
+                    print("Frequence :", frequence)
                     input_note = round(frequence, 2)
                 except Exception as e:
                     print("Error getting input note")
