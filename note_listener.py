@@ -13,9 +13,12 @@ class NoteListener:
         if self.last_update+90 < millis():
             if self.brightness > 0.02:
                 self.brightness -= 0.02
+            else:
+                self.brightness = 0.
         elif self.brightness < 0.97:
             self.brightness += 0.2
         self.neopixel.brightness = self.brightness
+        self.neopixel.show()
         print("Brightness: ", self.neopixel.brightness)
 
     def note(self, frequency):
