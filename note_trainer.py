@@ -1,6 +1,7 @@
 import traceback
 import numpy
 import math
+import time
 from scipy.signal import fftconvolve
 
 from constants import NOTES, NOTES_DICTIONNARY, RATE, SOUND_GATE
@@ -26,8 +27,8 @@ class NoteTrainer:
                 try:
                     frequence = freq_from_autocorr(raw_data_signal, RATE)
                     input_note = round(frequence, 2)
-                    print("Fréquence:", frequence)
-                    print("Input note:", input_note)
+                    # print("Fréquence:", frequence)
+                    # print("Input note:", input_note)
                 except Exception as e:
                     print("Error getting input note")
                     print(e)
@@ -42,7 +43,7 @@ class NoteTrainer:
                     continue
                 if signal_level > SOUND_GATE:
                     print("Incorrect signal level")
-                    continue
+                    # continue
 
                 target_note = closest_value_index(NOTES, round(input_note, 2))
 
@@ -56,6 +57,8 @@ class NoteTrainer:
 
             except Exception as e:
                 print(traceback.format_exc())
+
+            time.sleep(1)
 
 
 def loudness(chunk):
