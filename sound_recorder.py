@@ -26,11 +26,9 @@ class SoundRecorder:
 
     
     def setup(self):
-        print("Enter sound recorder setup method")
         self.py_audio = pyaudio.PyAudio()
         self.in_stream = self.py_audio.open(input_device_index=self.device_index, format=pyaudio.paInt16, channels=1,
                                             rate=RATE, input=True, frames_per_buffer=BUFFER_SIZE)
-        print("stream opened")
 
     def close(self):
         self.py_audio.close(self.in_stream)
@@ -38,4 +36,7 @@ class SoundRecorder:
 
     def get_audio(self):
         audio_string = self.in_stream.read(BUFFER_SIZE)
-        return numpy.fromstring(audio_string, dtype=numpy.int16)
+        print("Audio string: ", audio_string)
+        numpy_audio = numpy.fromstring(audio_string, dtype=numpy.int16)
+        print("Numpy audio: ", numpy_audio)
+        return numpy_audio
