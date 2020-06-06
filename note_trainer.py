@@ -18,7 +18,6 @@ class NoteTrainer:
 
         while True:
             try:
-                print("enter in while loop...")
                 sound_recorder.setup()
                 raw_data_signal = sound_recorder.get_audio()
                 signal_level = round(abs(loudness(raw_data_signal)), 2)
@@ -42,8 +41,8 @@ class NoteTrainer:
                     # print("Input note is out of range")
                     continue
                 if signal_level > SOUND_GATE:
-                    print("Incorrect signal level")
-                    # continue
+                    #print("Incorrect signal level")
+                    continue
 
                 target_note = closest_value_index(NOTES, round(input_note, 2))
 
