@@ -5,15 +5,16 @@ from constants import RATE, BUFFER_SIZE
 
 class SoundRecorder:
     def __init__(self):
-        self.py_audio = pyaudio.PyAudio()
+        self.py_audio = None
         self.device_index = self.get_micro_device_index()
         self.in_stream = None
 
     def get_micro_device_index(self):
+        py_audio = pyaudio.PyAudio()
         device_index = 0
         with ErrorManager():
-            for ii in range(self.py_audio.get_device_count()):
-                    device = self.py_audio.get_device_info_by_index(ii)
+            for ii in range(py_audio.get_device_count()):
+                    device = py_audio.get_device_info_by_index(ii)
                     if 'USB' in device['name']:
                             print('micro index is', ii)
                             device_index = ii
@@ -25,9 +26,11 @@ class SoundRecorder:
 
     
     def setup(self):
+        print("Enter sound recorder setup method")
         self.py_audio = pyaudio.PyAudio()
         self.in_stream = self.py_audio.open(input_device_index=self.device_index, format=pyaudio.paInt16, channels=1,
                                             rate=RATE, input=True, frames_per_buffer=BUFFER_SIZE)
+        print("stream opened")
 
     def close(self):
         self.py_audio.close(self.in_stream)
