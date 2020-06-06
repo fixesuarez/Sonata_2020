@@ -25,8 +25,8 @@ class NoteTrainer:
 
                 try:
                     frequence = freq_from_autocorr(raw_data_signal, RATE)
-                    print("Frequence :", frequence)
                     input_note = round(frequence, 2)
+                    print("Input note:", input_note)
                 except Exception as e:
                     print("Error getting input note")
                     print(e)
@@ -34,7 +34,9 @@ class NoteTrainer:
 
                 sound_recorder.close()
 
-                if input_note > NOTES[len(NOTES_DICTIONNARY)-1] or input_note < NOTES[0]:
+                if input_note > NOTES[-1] or input_note < NOTES[0]:
+                    print("Highest note: ", NOTES[-1])
+                    print("Min note: ", NOTES[0])
                     print("Input note is out of range")
                     continue
                 if signal_level > SOUND_GATE:
