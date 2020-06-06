@@ -48,7 +48,7 @@ class NoteTrainer:
                 target_note = closest_value_index(NOTES, round(input_note, 2))
 
                 print("signal_level:", signal_level)
-                print("frequency: ", str(inputnote)+"Hz")
+                print("frequency: ", str(input_note)+"Hz")
                 print("tuner note", NOTES_DICTIONNARY[NOTES[target_note]])
                 print("target note: ", target_note)
 
