@@ -1,13 +1,10 @@
 from utilities import millis, wheel
-from constants import LED_COUNT
+from constants import LED_COUNT, FREQUENCY_START, FREQUENCY_END, WIDE
 
 class NoteListener:
-    def __init__(self, neopixel, frequency_start, frequency_end):
+    def __init__(self, neopixel):
         self.neopixel = neopixel
         self.index = 0
-        self.frequency_start = frequency_start
-        self.frequency_end = frequency_end
-        self.wide = frequency_start - frequency_end
         self.last_update = millis()
         self.brightness=1.0
 
@@ -20,9 +17,10 @@ class NoteListener:
         self.neopixel.brightness = self.brightness
 
     def note(self, frequency):
-        if frequency < self.frequency_end and frequency > self.frequency_start:
-            pos = int((frequency-self.frequency_start) / self.wide * 255)
+        if frequency < FREQUENCY_END and frequency > FREQUENCY_START:
+            pos = int((frequency-FREQUENCY_START) / WIDE * 255)
             self.neopixel[self.index] = wheel(pos)
+            print("pos: ")
             self.neopixel.show()
             self.increment()
 
