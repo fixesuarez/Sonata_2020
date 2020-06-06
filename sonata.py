@@ -18,7 +18,7 @@ num_pixels = 15
 
 # The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
 # For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
-ORDER = neopixel.GRBW
+ORDER = neopixel.GRB
 
 neopixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.9, auto_write=False, pixel_order=ORDER
@@ -26,9 +26,6 @@ neopixels = neopixel.NeoPixel(
 
 if __name__ == '__main__':
     launch_loading_animation(0.002, neopixels, num_pixels)
-
-    print("Notes: ", NOTES)
-    print("Notes dictionnary: ", NOTES_DICTIONNARY)
 
     try:
         note_listener = NoteListener(neopixels)
