@@ -22,6 +22,7 @@ class NoteListener:
             self.neopixel[self.index] = wheel(pos)
             print("pos: ", pos)
             print("wheel position: ", wheel(pos))
+            print("Neopixels: ", self.neopixel)
             self.neopixel.show()
             self.increment()
 

@@ -57,8 +57,6 @@ class NoteTrainer:
             except Exception as e:
                 print(traceback.format_exc())
 
-            time.sleep(1)
-
 
 def loudness(chunk):
     data = numpy.array(chunk, dtype=float) / 32768.0
