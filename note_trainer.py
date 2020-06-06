@@ -10,7 +10,7 @@ class NoteTrainer:
         self.note_listener = note_listener
         print("Note trainer built")
 
-    def main():
+    def main(self):
         print("Initiating SoundRecorder...")
         sound_recorder = SoundRecorder()
 
