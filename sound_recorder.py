@@ -6,7 +6,7 @@ from constants import RATE, BUFFER_SIZE
 class SoundRecorder:
     def __init__(self):
         self.py_audio = pyaudio.PyAudio()
-        device_index = self.get_micro_device_index()
+        self.device_index = self.get_micro_device_index()
         self.in_stream = None
 
     def get_micro_device_index(self):
@@ -25,7 +25,7 @@ class SoundRecorder:
 
     
     def setup(self):
-        self.in_stream = self.py_audio.open(input_device_index=device_index, format=pyaudio.paInt16, channels=1,
+        self.in_stream = self.py_audio.open(input_device_index=self.device_index, format=pyaudio.paInt16, channels=1,
                                             rate=RATE, input=True, frames_per_buffer=BUFFER_SIZE)
 
     def close(self):
