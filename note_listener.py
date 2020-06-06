@@ -20,7 +20,7 @@ class NoteListener:
         self.neopixel.brightness = self.brightness
 
     def note(self, frequency):
-        if frequency < self.frequency_end and frequency > selffrequency_start:
+        if frequency < self.frequency_end and frequency > self.frequency_start:
             pos = int((frequency-self.frequency_start) / self.wide * 255)
             self.neopixel[self.index] = wheel(pos)
             self.neopixel.show()
