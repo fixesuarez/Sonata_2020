@@ -45,13 +45,12 @@ class NoteTrainer:
 
                 target_note = closest_value_index(NOTES, round(input_note, 2))
 
-                print("signal_level:", signal_level)
-                print("frequency: ", str(input_note)+"Hz")
-                print("tuner note", NOTES_DICTIONNARY[NOTES[target_note]])
-                print("target note: ", target_note)
+                # print("signal_level:", signal_level)
+                # print("frequency: ", str(input_note)+"Hz")
+                # print("tuner note", NOTES_DICTIONNARY[NOTES[target_note]])
+                # print("target note: ", target_note)
 
                 if self.note_listener != None:
-                    print("Yay ! J'ai bien un note listener !")
                     self.note_listener.note(input_note)
 
             except Exception as e:

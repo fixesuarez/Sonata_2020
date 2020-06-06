@@ -1,3 +1,4 @@
+import time
 from utilities import millis, wheel
 from constants import LED_COUNT, FREQUENCY_START, FREQUENCY_END, WIDE
 
@@ -24,7 +25,9 @@ class NoteListener:
             print("wheel position: ", wheel(pos))
             print("Neopixels: ", self.neopixel)
             self.neopixel.show()
+
             self.increment()
+            time.sleep(0.002)
 
     def increment(self):
         self.index += 1
