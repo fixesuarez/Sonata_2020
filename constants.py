@@ -4,7 +4,7 @@ LED_COUNT = 15
 
 ### SoundRecorder
 RATE = 44100
-BUFFER_SIZE = 1024 #1024 is a good buffer size 3072 works for Pi
+BUFFER_SIZE = 3072 #1024 is a good buffer size 3072 works for Pi
 # SECONDS_TO_RECORD = 0.05
 # if int(RATE * SECONDS_TO_RECORD / BUFFER_SIZE) == 0 
 #     BUFFERS_TO_RECORD = 1
