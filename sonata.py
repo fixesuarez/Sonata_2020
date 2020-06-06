@@ -3,7 +3,7 @@ import board
 import neopixel
 
 from utilities import launch_loading_animation
-from constants import FADE_WORKER_DELAY, FREQUENCY_START, FREQUENCY_END
+from constants import FADE_WORKER_DELAY, FREQUENCY_START, FREQUENCY_END, NOTES, NOTES_DICTIONNARY
 from note_listener import NoteListener
 from fade_worker import FadeWorker
 from note_trainer import NoteTrainer
@@ -27,13 +27,15 @@ neopixels = neopixel.NeoPixel(
 if __name__ == '__main__':
     launch_loading_animation(0.002, neopixels, num_pixels)
 
+    print("Notes: ", NOTES)
+    print("Notes dictionnary: ", NOTES_DICTIONNARY)
+
     try:
         note_listener = NoteListener(neopixels)
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
         fade_worker.start()
 
         note_trainer = NoteTrainer(note_listener)
-        print("Note trainer built")
         note_trainer.main()
 
     except KeyboardInterrupt:

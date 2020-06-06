@@ -20,7 +20,8 @@ class NoteListener:
         if frequency < FREQUENCY_END and frequency > FREQUENCY_START:
             pos = int((frequency-FREQUENCY_START) / WIDE * 255)
             self.neopixel[self.index] = wheel(pos)
-            print("pos: ")
+            print("pos: ", pos)
+            print("wheel position: ", wheel(pos))
             self.neopixel.show()
             self.increment()
 
