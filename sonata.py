@@ -35,6 +35,7 @@ if __name__ == '__main__':
 
         neopixels.fill((0, 0, 255))
         neopixels.show()
+        print("SHOULD BE GREEN")
         time.sleep(5)
 
         note_trainer = NoteTrainer(note_listener)
