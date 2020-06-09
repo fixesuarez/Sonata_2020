@@ -30,7 +30,7 @@ class NoteListener:
             self.neopixel.show()
             print("Color: ", wheel(pos))
             print("Neopixels: ", self.neopixel)
-            print("Brigthness: ", self.neopixel.brigtness)
+            print("Brightness: ", self.neopixel.brightness)
 
             self.increment()
             time.sleep(0.002)
