@@ -34,16 +34,13 @@ class NoteTrainer(object):
                     print("Error getting input note")
                     print(e)
                     input_note = 0
+                    continue
 
                 sound_recorder.close()
 
                 if input_note > NOTES[-1] or input_note < NOTES[0]:
-                    # print("Highest note: ", NOTES[-1])
-                    # print("Min note: ", NOTES[0])
-                    # print("Input note is out of range")
                     continue
                 if signal_level > SOUND_GATE:
-                    #print("Incorrect signal level")
                     continue
 
                 target_note = closest_value_index(NOTES, round(input_note, 2))
@@ -57,6 +54,7 @@ class NoteTrainer(object):
                     self.note_listener.note(input_note)
 
             except Exception as e:
+                print("Note trainer EXCEPTION in Main()")
                 print(traceback.format_exc())
 
 
