@@ -36,12 +36,10 @@ if __name__ == '__main__':
         note_trainer.add_note_listener(note_listener)
         note_trainer.main()
 
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, Exception) as e:
         fade_worker.stop()
         neopixels.fill((0, 0, 0))
         neopixels.show()
-        print("Program ended")
-
-    except Exception e:
         print("Error in Sonata.py")
         print(e)
+        print("Program ended")
