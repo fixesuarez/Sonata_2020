@@ -8,9 +8,12 @@ from constants import NOTES, NOTES_DICTIONNARY, RATE, SOUND_GATE
 from sound_recorder import SoundRecorder
 
 class NoteTrainer(object):
-    def __init__(self, note_listener):
-        self.note_listener = note_listener
+    def __init__(self):
+        self.note_listener = None
         print("Note trainer built")
+
+    def add_note_listener(self, note_listener):
+        self.note_listener = note_listener
 
     def main(self):
         print("Initiating SoundRecorder...")

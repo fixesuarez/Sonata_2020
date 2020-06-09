@@ -33,7 +33,8 @@ if __name__ == '__main__':
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
         fade_worker.start()
 
-        note_trainer = NoteTrainer(note_listener)
+        note_trainer = NoteTrainer()
+        note_trainer.add_note_listener(note_listener)
         note_trainer.main()
 
     except KeyboardInterrupt:
