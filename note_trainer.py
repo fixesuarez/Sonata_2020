@@ -10,10 +10,8 @@ from sound_recorder import SoundRecorder
 class NoteTrainer:
     def __init__(self, note_listener):
         self.note_listener = note_listener
-        print("Note trainer built")
 
     def main(self):
-        print("Initiating SoundRecorder...")
         sound_recorder = SoundRecorder()
 
         while True:

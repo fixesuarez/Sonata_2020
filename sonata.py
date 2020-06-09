@@ -25,9 +25,12 @@ neopixels = neopixel.NeoPixel(
 )
 
 if __name__ == '__main__':
-    launch_loading_animation(0.002, neopixels, num_pixels)
+    # launch_loading_animation(0.002, neopixels, num_pixels)
 
     try:
+        neopixels.fill((255, 0, 0,))
+        neopixels.show()
+        time.sleep(5)
         note_listener = NoteListener(neopixels)
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
         fade_worker.start()
@@ -36,7 +39,5 @@ if __name__ == '__main__':
         note_trainer.main()
 
     except KeyboardInterrupt:
-        neopixels.brightness = 0.
-        neopixels.show()
         fade_worker.stop()
         print("Program ended")
