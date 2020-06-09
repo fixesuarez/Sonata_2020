@@ -10,30 +10,28 @@ class NoteListener:
         self.brightness=0.9
 
     def fade(self):
-        pass
-        # if self.last_update+90 < millis():
-        #     if self.brightness > 0.02:
-        #         self.brightness -= 0.02
-        #     else:
-        #         self.brightness = 0.
-        # elif self.brightness < 0.97:
-        #     self.brightness += 0.2
-        # self.neopixels.brightness = self.brightness
-        # self.neopixels.show()
+        if self.last_update+90 < millis():
+            if self.brightness > 0.02:
+                self.brightness -= 0.02
+            else:
+                self.brightness = 0.
+        elif self.brightness < 0.97:
+            self.brightness += 0.2
+        self.neopixels.brightness = self.brightness
+        self.neopixels.show()
 
     def note(self, frequency):
         if frequency < FREQUENCY_END and frequency > FREQUENCY_START:
             pos = int((frequency-FREQUENCY_START) / WIDE * 255)
             color =  wheel(pos)
             # self.neopixels[self.index] = color
-            self.neopixels.fill((0, 255, 0))
-            self.neopixels.brightness = 0.9
+            self.neopixels.fill(color)
             self.neopixels.show()
-            print("Color: ", wheel(pos))
+            self.increment()
+            print("Color: ", color)
             print("neopixels: ", self.neopixels)
             print("Brightness: ", self.neopixels.brightness)
 
-            self.increment()
 
     def increment(self):
         self.index += 1
