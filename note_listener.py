@@ -34,7 +34,7 @@ class NoteListener:
             print("Brightness: ", self.neopixels.brightness)
 
             self.increment()
-            time.sleep(0.002)
+            time.sleep(4)
 
     def increment(self):
         self.index += 1
