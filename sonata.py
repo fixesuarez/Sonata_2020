@@ -33,8 +33,6 @@ if __name__ == '__main__':
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
         fade_worker.start()
 
-        time.sleep(5)
-
         note_trainer = NoteTrainer(note_listener)
         note_trainer.main()
 

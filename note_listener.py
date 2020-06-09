@@ -24,8 +24,7 @@ class NoteListener:
         if frequency < FREQUENCY_END and frequency > FREQUENCY_START:
             pos = int((frequency-FREQUENCY_START) / WIDE * 255)
             color =  wheel(pos)
-            # self.neopixels[self.index] = color
-            self.neopixels.fill(color)
+            self.neopixels[self.index] = color
             self.neopixels.show()
             self.increment()
             print("Color: ", color)
