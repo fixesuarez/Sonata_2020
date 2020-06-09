@@ -26,7 +26,7 @@ class NoteListener:
             pos = int((frequency-FREQUENCY_START) / WIDE * 255)
             color =  wheel(pos)
             # self.neopixels[self.index] = color
-            self.neopixels.fill((255, 0, 0))
+            self.neopixels.fill((0, 255, 0))
             self.neopixels.brightness = 0.9
             self.neopixels.show()
             print("Color: ", wheel(pos))

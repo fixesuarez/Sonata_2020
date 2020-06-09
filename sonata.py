@@ -41,6 +41,6 @@ if __name__ == '__main__':
 
     except KeyboardInterrupt:
         fade_worker.stop()
-        neopixels.fill(0, 0, 0)
+        neopixels.fill((0, 0, 0))
         neopixels.show()
         print("Program ended")
