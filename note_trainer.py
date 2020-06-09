@@ -7,7 +7,7 @@ from scipy.signal import fftconvolve
 from constants import NOTES, NOTES_DICTIONNARY, RATE, SOUND_GATE
 from sound_recorder import SoundRecorder
 
-class NoteTrainer:
+class NoteTrainer(object):
     def __init__(self, note_listener):
         self.note_listener = note_listener
         print("Note trainer built")

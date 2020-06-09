@@ -33,9 +33,6 @@ if __name__ == '__main__':
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
         fade_worker.start()
 
-        neopixels.fill((0, 0, 255))
-        neopixels.show()
-        print("SHOULD BE GREEN")
         time.sleep(5)
 
         note_trainer = NoteTrainer(note_listener)
