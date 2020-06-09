@@ -10,6 +10,7 @@ class NoteListener:
         self.brightness=1.0
 
     def fade(self):
+        pass
         # if self.last_update+90 < millis():
         #     if self.brightness > 0.02:
         #         self.brightness -= 0.02
