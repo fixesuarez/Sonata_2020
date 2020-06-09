@@ -25,16 +25,17 @@ neopixels = neopixel.NeoPixel(
 )
 
 if __name__ == '__main__':
-    # launch_loading_animation(0.002, neopixels, num_pixels)
+    launch_loading_animation(0.002, neopixels, num_pixels)
 
     try:
-        neopixels.fill((255, 0, 0,))
-        neopixels.show()
-        time.sleep(5)
 
         note_listener = NoteListener(neopixels)
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
         fade_worker.start()
+
+        neopixels.fill((0, 0, 255))
+        neopixels.show()
+        time.sleep(5)
 
         note_trainer = NoteTrainer(note_listener)
         note_trainer.main()
