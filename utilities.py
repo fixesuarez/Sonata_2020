@@ -4,7 +4,7 @@ import neopixel
 millis = lambda: int(round(time.time() * 1000))
 
 def launch_loading_animation(frame_delay, neopixels, count_leds):
-    for i in range(3):
+    for i in range(1):
         rainbow_cycle(frame_delay, neopixels, count_leds)
 
     while neopixels.brightness > 0.:
