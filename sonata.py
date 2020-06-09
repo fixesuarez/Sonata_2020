@@ -39,4 +39,4 @@ if __name__ == '__main__':
         neopixels.brightness = 0.
         neopixels.show()
         fade_worker.stop()
-        neopixels.deinit()
+        print("Program ended")
