@@ -31,6 +31,10 @@ if __name__ == '__main__':
         neopixels.fill((255, 0, 0,))
         neopixels.show()
         time.sleep(5)
+
+        neopixels.fill((0, 0, 0))
+        neopixels.show()
+        time.sleep(2)
         note_listener = NoteListener(neopixels)
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
         fade_worker.start()
