@@ -27,6 +27,7 @@ class NoteListener:
             color =  wheel(pos)
             # self.neopixel[self.index] = color
             self.neopixel.fill(color)
+            self.neopixel.brightness = 0.9
             self.neopixel.show()
             print("Color: ", wheel(pos))
             print("Neopixels: ", self.neopixel)
