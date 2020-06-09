@@ -21,8 +21,9 @@ class SoundRecorder:
 
             if device_index is 0:
                 print('No micro device found')
-        except Exception e:
+        except Exception as e:
             print("Error getting device index")
+            print(e)
 
         return device_index
 
