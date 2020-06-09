@@ -19,7 +19,6 @@ class NoteListener:
             self.brightness += 0.2
         self.neopixels.brightness = self.brightness
         self.neopixels.show()
-        print("Brightness: ", self.brightness)
 
     def note(self, frequency):
         if frequency < FREQUENCY_END and frequency > FREQUENCY_START:

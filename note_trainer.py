@@ -34,7 +34,6 @@ class NoteTrainer(object):
                     print("Error getting input note")
                     print(e)
                     input_note = 0
-                    continue
 
                 sound_recorder.close()
 
