@@ -7,7 +7,7 @@ class NoteListener:
         self.neopixel = neopixel
         self.index = 0
         self.last_update = millis()
-        self.brightness=1.0
+        self.brightness=0.9
 
     def fade(self):
         pass
@@ -26,7 +26,7 @@ class NoteListener:
             pos = int((frequency-FREQUENCY_START) / WIDE * 255)
             color =  wheel(pos)
             # self.neopixel[self.index] = color
-            self.neopixel.fill(color)
+            self.neopixel.fill((255, 0, 0))
             self.neopixel.brightness = 0.9
             self.neopixel.show()
             print("Color: ", wheel(pos))
