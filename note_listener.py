@@ -7,7 +7,7 @@ class NoteListener:
         self.neopixels = neopixels
         self.index = 0
         self.last_update = millis()
-        self.brightness=0.9
+        self.brightness=0.4
 
     def fade(self):
         if self.last_update+90 < millis():
@@ -15,7 +15,7 @@ class NoteListener:
                 self.brightness -= 0.02
             else:
                 self.brightness = 0.
-        elif self.brightness < 0.97:
+        elif self.brightness < 0.5:
             self.brightness += 0.2
         self.neopixels.brightness = self.brightness
         self.neopixels.show()
