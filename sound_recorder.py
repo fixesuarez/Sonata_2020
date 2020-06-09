@@ -36,7 +36,5 @@ class SoundRecorder:
 
     def get_audio(self):
         audio_string = self.in_stream.read(BUFFER_SIZE)
-        # print("Audio string: ", audio_string)
         numpy_audio = numpy.fromstring(audio_string, dtype=numpy.int16)
-        # print("Numpy audio: ", numpy_audio)
         return numpy_audio

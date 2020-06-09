@@ -55,7 +55,7 @@ class NoteTrainer(object):
 
             except Exception as e:
                 print("Note trainer EXCEPTION in Main()")
-                print(traceback.format_exc())
+                print(e)
 
 
 def loudness(chunk):
