@@ -12,7 +12,7 @@ class SoundRecorder:
     def get_micro_device_index(self):
         py_audio = pyaudio.PyAudio()
         device_index = 0
-        with ErrorManager():
+        try:
             for ii in range(py_audio.get_device_count()):
                     device = py_audio.get_device_info_by_index(ii)
                     if 'USB' in device['name']:
@@ -21,6 +21,8 @@ class SoundRecorder:
 
             if device_index is 0:
                 print('No micro device found')
+        except Exception e:
+            print("Error getting device index")
 
         return device_index
 

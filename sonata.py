@@ -41,3 +41,7 @@ if __name__ == '__main__':
         neopixels.fill((0, 0, 0))
         neopixels.show()
         print("Program ended")
+
+    except Exception e:
+        print("Error in Sonata.py")
+        print(e)
