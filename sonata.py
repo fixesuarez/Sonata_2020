@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
         note_trainer = NoteTrainer()
         note_trainer.add_note_listener(note_listener)
-        note_trainer.main()
+        # note_trainer.main()
 
     except (KeyboardInterrupt, Exception) as e:
         fade_worker.stop()
