@@ -9,7 +9,7 @@ def launch_loading_animation(frame_delay, neopixels, count_leds):
 
     while neopixels.brightness > 0.:
             neopixels.brightness -= 0.01
-            neopixels.show()
+            # neopixels.show()
             time.sleep(0.005)
 
 

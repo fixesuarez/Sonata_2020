@@ -21,11 +21,12 @@ num_pixels = 15
 ORDER = neopixel.GRB
 
 neopixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=0.9, auto_write=False, pixel_order=ORDER
+    pixel_pin, num_pixels, bpp=3,brightness=0.9, auto_write=False, str=ORDER
 )
 
 if __name__ == '__main__':
     launch_loading_animation(0.002, neopixels, num_pixels)
+    print(neopixels)
 
     try:
         note_listener = NoteListener(neopixels)
