@@ -21,7 +21,7 @@ num_pixels = 15
 ORDER = neopixel.GRB
 
 neopixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, bpp=3,brightness=0.9, auto_write=False, str=ORDER
+    pixel_pin, num_pixels, bpp=3,brightness=0.9, auto_write=False, pixel_order=ORDER
 )
 
 if __name__ == '__main__':
