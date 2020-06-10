@@ -22,6 +22,8 @@ class NoteTrainer(object):
         while True:
             try:
                 sound_recorder.setup()
+                
+                sound_recorder.close()
                 continue
                 print("SHOULD NOT SEE")
                 raw_data_signal = sound_recorder.get_audio()
