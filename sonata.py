@@ -31,17 +31,13 @@ if __name__ == '__main__':
 
 
     try:
-        
-        py_audio = pyaudio.PyAudio()
-        launch_loading_animation(0.002, neopixels, num_pixels)
-        print("pyaudio instance created")
         note_listener = NoteListener(neopixels)
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
         fade_worker.start()
 
         note_trainer = NoteTrainer()
         note_trainer.add_note_listener(note_listener)
-        # note_trainer.main()
+        note_trainer.main()
 
     except (KeyboardInterrupt, Exception) as e:
         fade_worker.stop()
