@@ -21,10 +21,10 @@ class NoteTrainer(object):
 
         while True:
             try:
+                continue
                 sound_recorder.setup()
                 
                 sound_recorder.close()
-                continue
                 raw_data_signal = sound_recorder.get_audio()
                 print("SHOULD NOT SEE")
                 signal_level = round(abs(loudness(raw_data_signal)), 2)
