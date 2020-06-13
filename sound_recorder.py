@@ -8,12 +8,18 @@ class SoundRecorder:
         self.py_audio = None
         self.device_index = self.get_micro_device_index()
         self.in_stream = None
+        print("Sound recorder initiated")
+        print("Pyaudio :", self.py_audio)
+        print("Device index: ", self.device_index)
+        print("In_stream :", self.in_stream)
 
     def get_micro_device_index(self):
         py_audio = pyaudio.PyAudio()
         device_index = 0
         try:
-            for ii in range(py_audio.get_device_count()):
+            device_count = py_audio.get_device_count()
+            print("Device_count: ", device_count)
+            for ii in range(device_count):
                     device = py_audio.get_device_info_by_index(ii)
                     if 'USB' in device['name']:
                             print('micro index is', ii)
