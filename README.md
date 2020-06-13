@@ -1,5 +1,5 @@
 # Sonata_2020
-Python 3 is required
+Python 3.6 is required
 
 ## To get running the first time
 - run: sudo apt-get install libportaudio0 libportaudio2 libportaudiocpp0 portaudio19-dev
