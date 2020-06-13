@@ -33,6 +33,7 @@ if __name__ == '__main__':
     try:
         
         py_audio = pyaudio.PyAudio()
+        launch_loading_animation(0.002, neopixels, num_pixels)
         print("pyaudio instance created")
         note_listener = NoteListener(neopixels)
         fade_worker = FadeWorker(note_listener, FADE_WORKER_DELAY)
