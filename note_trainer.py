@@ -3,6 +3,7 @@ import numpy
 import math
 import time
 from scipy.signal import fftconvolve
+import pyaudio
 
 from constants import NOTES, NOTES_DICTIONNARY, RATE, SOUND_GATE
 from sound_recorder import SoundRecorder
@@ -17,7 +18,7 @@ class NoteTrainer(object):
 
     def main(self):
         print("Initiating SoundRecorder...")
-        pyaudio = py_audio
+        py_audio = pyaudio.PyAudio()
         # sound_recorder = SoundRecorder()
 
         while True:
