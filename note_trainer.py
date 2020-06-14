@@ -18,12 +18,9 @@ class NoteTrainer(object):
 
     def main(self):
         print("Initiating SoundRecorder...")
-        py_audio = pyaudio.PyAudio()
-        # sound_recorder = SoundRecorder()
+        sound_recorder = SoundRecorder()
 
         while True:
-            continue
-            print("SHOULD NOT SEE")
             try:
                 sound_recorder.setup()
                 

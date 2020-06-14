@@ -6,8 +6,7 @@ from constants import RATE, BUFFER_SIZE
 class SoundRecorder:
     def __init__(self):
         self.py_audio = None
-        # self.device_index = self.get_micro_device_index()
-        self.device_index = 2
+        self.device_index = self.get_micro_device_index()
         self.in_stream = None
 
     def get_micro_device_index(self):
