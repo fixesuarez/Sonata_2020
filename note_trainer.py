@@ -17,15 +17,15 @@ class NoteTrainer(object):
 
     def main(self):
         print("Initiating SoundRecorder...")
-        sound_recorder = SoundRecorder()
+        pyaudio = py_audio
+        # sound_recorder = SoundRecorder()
 
         while True:
+            continue
+            print("SHOULD NOT SEE")
             try:
-                continue
-                print("SHOULD NOT SEE")
                 sound_recorder.setup()
                 
-                sound_recorder.close()
                 raw_data_signal = sound_recorder.get_audio()
                 signal_level = round(abs(loudness(raw_data_signal)), 2)
 
